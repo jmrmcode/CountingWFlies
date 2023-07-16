@@ -18,12 +18,11 @@ img = plt.imread(input_image_path)
 img_copy = img.copy().astype("float")
 img_copy.shape
 
-# set paremeters
+# set parameters
 boxHalfRef = 20
 percentile = 0.15
 percentileBlue = 0.022
 
-# build the reference matrix and its probability distribution
 # fly's centroid coordinates: 512,1432
 matref = img_copy[512-boxHalfRef:512+boxHalfRef, 1432-boxHalfRef:1432+boxHalfRef, 0:3]# using quantiles
 
@@ -42,14 +41,10 @@ for i in np.arange(boxHalfRef, img_copy.shape[0] - boxHalfRef):
 
         testedDist = img_copy[i-boxHalfRef:i+boxHalfRef, j-boxHalfRef:j+boxHalfRef, 0:3]
 
-        #if np.argwhere(np.isnan(testedDist)).shape[0] == 0:# jump a window having a fly (i.e., there are many NAs)
         if np.argwhere(np.isnan(img_copy[i-boxHalfWindowforNA:i+boxHalfWindowforNA, j-boxHalfWindowforNA:j+boxHalfWindowforNA, 0])).shape[0] == 0:  # jump a window having a fly (i.e., there are many NAs)
             if ((np.quantile(testedDist[:,:,0], percentile+0.3) >= Qrefred) and (np.quantile(testedDist[:,:,1], percentile+0.3) >= Qrefgreen) and (np.quantile(testedDist[:,:,2], percentileBlue+0.4) >= Qrefblue)):
                 img_copy[i-boxHalfRef:i+boxHalfRef, j-boxHalfRef:j+boxHalfRef, 0:3] = np.nan
                 whiteflyAmount = whiteflyAmount + 1
-                #Qrefred = np.median([Qrefred, np.quantile(testedDist[:,:,0], percentile)])
-                #Qrefgreen = np.median([Qrefgreen, np.quantile(testedDist[:,:,1], percentile)])
-                #Qrefblue = np.median([Qrefblue, np.quantile(testedDist[:,:,2], percentileBlue)])
                 print(whiteflyAmount, "flies")
                 continue
         else:
