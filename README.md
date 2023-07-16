@@ -13,10 +13,10 @@ The adjustable parameters are boxHalfRef (window size / 2), percentile (_p_th pe
 
 ## Performance and Limitations
 The algorithm takes about two minutes to run on a 1520 x 1300 pixel image with 87% accuracy.
-The parameters have to be manually set.
+The main limitation is that the parameters have to be manually set.
 
 ## Sample Input and Output
-<img src="https://github.com/jmrmcode/Multispecies-Occupancy-model-using-Turing/blob/main/parametersPosterior.png?raw=true" width="500" height="300">
+<img src="FigGitHub.png" width="680" height="300">
 
 ## License
 GNU General Public License v3
