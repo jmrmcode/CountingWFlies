@@ -15,7 +15,7 @@ The adjustable parameters are boxHalfRef (window size / 2), percentile (_p_th pe
 The algorithm takes about two minutes to run on a 1520 x 1300 pixel image with 87% accuracy.
 The main limitation is that the parameters have to be manually set.
 
-## Sample Input and Output
+## Input and Output
 <img src="FigGitHub.png" width="680" height="300">
 
 ## License
