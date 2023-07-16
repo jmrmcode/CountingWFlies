@@ -5,7 +5,8 @@ Algorithm to count Whitefly using digital image analysis
 To run this code, ensure you have Python 3.7 or higher installed. Additionally, install the matplotlib and NumPy libraries using the following command: pip install matplotlib numpy.
 
 ## Usage
-To run the whitefly counting algorithm, execute the following command: python whitefly_counter.py --input image.jpg. The code will process the input image and provide the count of whiteflies detected.
+To run the whitefly counting algorithm, first download _countWfly_GH.py_ and _input_image-jpg_ then, execute the following command on the terminal: python3 abosolute-path-to-countWfly_GH.py abosolute-path-to-the-input_image.jpg abosolute-path-to-the-output_image.jpg
+The script will print the index of the pixel being processed, update the number of whiteflies detected on the screen, and finally, it will print the total number of whitefly and save the image with black squares on the detected flies.
 
 ## Algorithm Details
 The algorithm scans the digital image using a wings-size moving window. The window goes over the image looking for whiteflies. Wings are detected based on their color. The algorithm takes advantage of the contrast between the white wings and the background and matches the densities of the RGB color channels' intensity within the moving window with those within the reference wings.
