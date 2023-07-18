@@ -1,5 +1,5 @@
 # CountingWFlies
-Algorithm to count Whitefly using digital image analysis
+A simple algorithm to count Whitefly using a digital image.
 
 ## Installation Instructions
 To run this code, ensure you have Python 3.7 or higher installed. Additionally, install the matplotlib and NumPy libraries using the following command: pip install matplotlib numpy.
