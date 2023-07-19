@@ -13,7 +13,7 @@ The algorithm scans the digital image using a wings-size moving window. The wind
 The adjustable parameters are boxHalfRef (window size / 2), percentile (_p_th percentile used as a threshold in the red and green channels of the reference wings), percentileBlue (_p_th percentile used as a threshold in the blue channel of the reference wings), and buffer (distance around the window used to set the wing pixels as NA after being counted). 
 
 ## Performance and Limitations
-The algorithm takes about two minutes to run on a 1520 x 1300 pixel image with 96.5% accuracy.
+The algorithm takes about two minutes to run on a 1520 x 1300 pixel image with 93% accuracy.
 The main limitation is that the parameters have to be manually set.
 
 ## Input and Output
